@@ -17,7 +17,7 @@ const db = mysql.createConnection({
     user: 'sqluser',
     host: 'localhost',
     password:'password',
-    database: 'employeesystem'
+    database: 'patientportal'
 })
 
 app.listen(PORT,() =>{
