@@ -36,7 +36,7 @@ function Header() {
                   <Form.Control
                     type="search"
                     // value={reservationNumber}
-                    placeholder="Enter Reservation"
+                    placeholder="Enter Patient Name"
                     className="me-2"
                     minLength="24"
                     // onChange={(e) => setReservationNumber(e.target.value)}

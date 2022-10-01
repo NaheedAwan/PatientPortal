@@ -6,12 +6,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 // Components
 import Home from './components/Home'
-
+import Create from './components/Create'
 import Header from './components/Header'
 
 function App() {
-  // const [flights, setFlights] = useState('')
-  // const [selectedFlight, setSelectedFlight] = useState('')
+  
+
 
   return (
     <div className="App ">
@@ -22,10 +22,8 @@ function App() {
           
             <Routes>
               <Route path="/" element={<Home />} />
-              {/* <Route path="/results" element={<Results />} />
-              <Route path="/book-flight" element={<BookFlight />} />
-              <Route path="/reservation/:id" element={<Reservation />} /> */}
-              {/* <Route path="/reservation/*" element={<Reservation />} /> */}
+              <Route path ="/create" element = {<Create/>}/>
+            
             </Routes>
           
         </div>
