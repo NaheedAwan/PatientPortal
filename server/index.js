@@ -14,7 +14,30 @@ app.use(cors())
 app.use(express.json())
 
 // ====================================================================================================================================================
+app.post('/create', (req,res) => {
+    const name = req.body.name
+    const age = req.body.age
+    const sex = req.body.sex
+    const conditions = req.body.conditions
+    const medications = req.body.medications
+    const contactInfo= req.body.contactInfo
 
+    db.query('INSERT INTO patientinfo (name, age, sex, conditions, medications, contactInfo) VALUES(?,?,?,?,?,?)', 
+    [name, age, sex, conditions, medications, contactInfo],
+    (err, result) => {
+        if (err) {
+            console.log(err)
+        } else{
+            res.send("values inserted")
+        }
+    }
+    )
+})
+
+
+
+
+// =================================================================================================================================================
 
 app.listen(PORT,() =>{
     console.log("you are connnected to port 4001")

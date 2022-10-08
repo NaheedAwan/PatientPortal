@@ -6,6 +6,28 @@ import Axios from 'axios';
 
 
 export default function Create() {
+    const[name ,setName] = useState ('')
+    const[age, setAge] = useState(0)
+    const[sex, setSex] = useState('')
+
+    const[conditions, setConditions] = useState('')
+    const[medications, setMedications] = useState('')
+    const[contactInfo, setContactInfo] = useState('')
+
+    const addPatientInfo = () =>{
+        console.log(name)
+        Axios.post('http://localhost:4001/create', {
+            name:name,
+            age:age,
+            sex:sex,
+            conditions:conditions,
+            medications:medications,
+            contactInfo:contactInfo
+        }).then ( ()=>{
+            console.log('success')
+        })
+    }
+
   return (
     <div>
   <div className="App">
@@ -16,43 +38,43 @@ export default function Create() {
         <label>Name:</label>
         <input
          type="text" 
-        //  onChange={(event) => 
-        //   {setName(event.target.value)}}
+         onChange={(event) => 
+          {setName(event.target.value)}}
          ></input>
         <label>Age:</label>
         <input 
         type="number"
-        // onChange={(event) => 
-        //   {setAge(event.target.value)}}
+        onChange={(event) => 
+          {setAge(event.target.value)}}
         ></input>
         <label>Sex:</label>
         <input 
         type="text"
-        // onChange={(event) => 
-        //   {setSex(event.target.value)}}
+        onChange={(event) => 
+          {setSex(event.target.value)}}
         ></input>
-        <label>Condition:</label>
+        <label>Conditions:</label>
         <input 
         type="text"
-        // onChange={(event) => 
-        //   {setPosition(event.target.value)}}
+        onChange={(event) => 
+          {setConditions(event.target.value)}}
         ></input>
-        <label>Current Medication:</label>
+        <label> Medications:</label>
         <input 
-        type="Number"
-        // onChange={(event) => 
-        //   {setSalary(event.target.value)}}
+        type="text"
+        onChange={(event) => 
+          {setMedications(event.target.value)}}
         ></input>
-        <label>Address:</label>
+        <label>Contact Info:</label>
         <input
          type="text"
-        //  onChange={(event) => 
-        //   {setCountry(event.target.value)}}
+         onChange={(event) => 
+          {setContactInfo(event.target.value)}}
          ></input>
         {/* <label></label>
         <input type=""></input> */}
-        <button >
-          Add Employee
+        <button onClick={addPatientInfo} >
+          Add Patient
           </button>
       </div>
 
