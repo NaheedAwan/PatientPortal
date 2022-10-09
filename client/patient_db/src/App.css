@@ -27,7 +27,7 @@ margin-top:15px;
 .App-2 button:hover {
   cursor:pointer;
 }
-.employees {
+.patients {
   display:flex;
   align-items : center;
   justify-content: center;
@@ -42,7 +42,7 @@ margin-top:15px;
   /* background-color: aqua; */
   align-items: center;
 }
-.employee {
+.patient {
   width: 700px;
   height: auto;
   border:1px solid black;
@@ -54,7 +54,7 @@ margin-top:15px;
   justify-content: center;
   font-family: 'Courier New', Courier, monospace;
 }
-employee h3{
+patient h3{
   margin:20x;
   font: ;
 }

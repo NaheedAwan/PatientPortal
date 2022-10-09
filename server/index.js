@@ -34,6 +34,18 @@ app.post('/create', (req,res) => {
     )
 })
 
+// ===============================================================================================================================================
+
+app.get('/display', (req, res) => {
+    db.query('SELECT * FROM patientinfo' , (err, result) => {
+        if(err) {
+            console.log(err) 
+        } else {
+            res.json( result )
+        }
+    })
+})
+
 
 
 

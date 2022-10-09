@@ -13,7 +13,7 @@ export default function Create() {
     const[conditions, setConditions] = useState('')
     const[medications, setMedications] = useState('')
     const[contactInfo, setContactInfo] = useState('')
-
+    const [patientsList, setPatientsList] = useState([])
     const addPatientInfo = () =>{
         console.log(name)
         Axios.post('http://localhost:4001/create', {
@@ -25,6 +25,18 @@ export default function Create() {
             contactInfo:contactInfo
         }).then ( ()=>{
             console.log('success')
+    
+            setPatientsList([
+                ...patientsList,{
+                  name: name,
+                  age:age,
+                  sex: sex,
+                  conditions: conditions,
+                  medications: medications,
+                  contactInfo: contactInfo
+                }
+              ])
+            
         })
     }
 

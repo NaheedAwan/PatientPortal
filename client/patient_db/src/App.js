@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Create from './components/Create'
 import Header from './components/Header'
+import  Display  from './components/Display'
 
 function App() {
   
@@ -23,6 +24,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path ="/create" element = {<Create/>}/>
+              <Route path = "/display" element = {<Display/>}/>
             
             </Routes>
           
